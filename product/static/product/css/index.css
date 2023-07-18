@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: medium;
+}
+
+#cc{
+   width:99%;
+   height:500px;
+   margin:10px;
+   display: flex;
+   justify-content: center;
+}
+.card{
+    margin:10px;
+    width:85%;
+    height:500px;
+    padding:0px;
+}
+.card img{
+    height:500px;
+    padding: 0px;
+    border-radius: 4px;    
+}
+
+#cd{
+   padding:20px;
+   margin: auto;
+}
+
+.dd{
+    display:flex;
+    justify-content: center;
+    margin:auto;
+    margin-bottom: 5px;
+}
+.card1{
+    width:95%;
+    height:400px;
+    margin:20px; 
+}
+.card1 img{
+ width:100%;
+ height:300px;
+ margin:auto;
+ padding:2px;
+}
+.box
+{
+position: fixed;
+}

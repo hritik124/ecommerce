@@ -1,0 +1,28 @@
+{% extends 'product/base.html' %}
+{%  block content %}
+
+<div class="container py-5" style="display:flex; max-width:50rem; height:30rem;"  >
+<div class="card" style="width:25rem; margin:auto; height:24rem; border:1px solid grey; "> 
+<img src="{{ i.image.url }}" class="card-img-left" style="height:24rem" alt="..." >
+</div>
+<hr>
+<br><br>
+  
+  <div class="card-body" style=" border:1px solid grey; background-color:whitesmoke;">
+   <h2> {{i.name}}</h2><br>
+<div> MRP : {{i.price}}</div><br>
+<div> Description : {{i.desc}} </div><br>
+<div>Availability : {{available}} </div><br>
+<div>Purchased : {{q}} </div><br>
+<div>Total : {{total}} </div><br>
+
+<button type="submit" style="padding:7px; width: 100%; background-color:rgb(245, 245, 247);color:rgb(197, 54, 54); border-radius: 4px; font-size:20px;" >
+<a href="{% url 'billing' %}" style"" align="center"style="color:black" >Billing Address</a></button>
+  </div>
+</div>
+{% endblock content %}
+
+
+    
+
+

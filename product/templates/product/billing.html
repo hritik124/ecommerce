@@ -1,0 +1,54 @@
+{% extends 'product/base.html' %}
+{% block content %}
+<html>
+<head>
+<title>billing  page</title>
+<style>
+        div{
+      transition: transform 1s;
+    }
+     
+</style>
+</head>
+<body>
+<div  style="width:40%; margin:auto; padding:5px; background:rgb(107, 178, 248);  margin-top:20px;">
+    <div style="margin:5px; padding:5px;">
+<h1 align="center">Billing page</h1>
+  <br>
+<form action="{% url 'bills'%}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label for="fname" >First Name : </label>
+    <input type="text" id="fname" name="fname" class="form-control">
+    </div>
+    <div class="mb-3">
+    <label for="address">Address : </label><br>
+    <input type="text" id="address" name="address" class="form-control">
+    </div>
+    <div class="mb-3">
+    <label for="pincode">Pincode : </label><br>
+    <input type="text" id="pincode" name="pincode" class="form-control">
+    </div>
+    <div class="mb-3">
+    <label for="city">City : </label><br>
+    <input type="text" id="city"class="form-control" name="city">
+    </div>
+    <div class="mb-3">
+    <label for="mobile"> Mobile : </label><br>
+    <input type="text" id="mobile"class="form-control" name="mobile">
+    </div>
+    <button type="submit" value="Data Saved"class="btn btn-dark" align="center"> Submit </button>
+
+</form>
+
+</div>
+
+</div>
+
+
+
+    {% endblock content %}
+    </body>
+    </html>
+
+   

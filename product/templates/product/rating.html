@@ -1,0 +1,50 @@
+{% extends 'product/base.html' %}
+
+{% block content %}
+<div  style="width:40%; margin:auto; padding:5px; background:#8d8df3bc ;  margin-top:20px;">
+    <div style="margin:5px; padding:5px;">
+<form action="{% url 'submitreview' %}" method="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="name" class="form-label"><b>User Name</b></label>
+        <select id="cars" name="ch">
+            {% for i in data %}
+            <option value="{{i.username}}">{{i.username}}</option>
+        {% endfor %}
+
+        </select>
+    </div>
+    <br>
+   <div>
+    <label for="name" class="form-label"> Rating </label>
+    <input type="text" class="form-control" name="cr">
+   </div>
+<br>
+   <div>
+    <label for="name" class="form-label"> Review </label>
+    <input type="text" class="form-control" name="crev">
+   </div>
+<br>
+   <div>
+    <label for="name" class="form-label"> product you like most </label>
+    <input type="text" class="form-control" name="cp">
+   </div>
+ <br>
+   <div>
+    <br>
+    <button type="submit" class="btn btn-dark" > Submit </button>
+    
+   </div>
+</form>
+ 
+  
+  
+
+</div>
+</div>
+
+  
+  
+
+{% endblock content %}

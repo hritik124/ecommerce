@@ -1,0 +1,204 @@
+{% load static %}
+
+
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'product/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'product/css/index.css' %}">
+    
+  </head>
+
+<body>
+<nav class="navbar navbar-expand-lg " style="background-color:black   "class="box" >
+  <div class="container-fluid">
+    <h1 ><a class="navbar-brand" href="{% url 'base' %}"style="color:white;">SHOOPING WEBSITE</a></h1>
+    <button class="navbar-toggler" type="butto-+n" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+ 
+            
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color:aliceblue;">
+          MENS WEAR
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'shirt' %}">SHIRTS</a></li>
+            <li><a class="dropdown-item" href="{% url 'croptop' %}">KURTA</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'tshirt' %}">PANTS</a></li>
+            <li><a class="dropdown-item" href="{% url 'bodycon' %}">JACKET</a></li>
+            <li><a class="dropdown-item" href="{% url 'aline' %}">WATCH</a></li>
+            </ul>
+        </li>
+        
+       
+      
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 "style="color:white;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'allitems' %}" style="color:white;">SUIT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'footwear' %}"style="color:white;">FOOTWEAR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'rating' %}"style="color:white;">RATING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'mycart' %}"style="color:white;">MYCART</a>
+          </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+     
+     
+
+      <form class="d-flex" action="{% url 'search' %}" method="POST" >
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searchitem" id="search">
+        <button class="btn btn-outline-success" type="submit" style="color:white;">Search</button>
+      </form>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white; ">
+          <img src="{% static 'user.png' %}" width="35" class="d-inline-block align-right " style="outline:white; padding:1px; background-color:white; margin-top:-20px; ">
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li> <a class="dropdown-item" href="{% url 'signup' %}">SignUp</a></li>
+          <li> <a class="dropdown-item" href="{% url 'login' %}">LogIn</a><li>
+            <li> <a class="dropdown-item" href="{% url 'logout' %}">LogOut</a><li>
+       </ul>
+
+      </li>
+      
+      
+    </ul>
+    </div>
+</nav>
+<script src="{% static 'product/js/bootstrap.bundle.min.js' %}"></script>
+
+{% block content %}
+
+<body style="height:1500px">
+
+  
+    
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+          </div>
+        
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/static/product/image/banner.webp" alt="Los Angeles" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="/static/product/image/banner3.webp" alt="Chicago" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="/static/product/image/banner2.webp" alt="New York" class="d-block w-100">
+            </div>
+          </div>
+        
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row bg-primary text-center p-5 text-white border-bottom shadow">
+            <h1>SALE IS LIVE NOW</h1>
+            <span>5% Instant Discount on Axis Bank Credit and Debit Card</span>
+            <small class="fw-lighter">Term and Condition Applied (For details visit Bank's official Website)</small>
+          </div>
+        </div> 
+        <br>
+        
+        <h3 align="center">TRENDING CATEGORIES</h3>
+        
+  
+      <div id="cc">
+        <div class="card">
+        <a href="{% url 'aline' %}">  <img src="/static/product/image/kurta_1.jpg"  alt="..." width="100%"></a>
+         </div>
+        <div class="card">
+         <a href="{% url 'aline' %}"> <img src="/static/product/image/kurta_3.jpg"     alt="..." width="100%"></a>
+        </div>
+        <div class="card">
+         <a href="{% url 'croptop' %}"> <img src="/static/product/image/kurta_4.jpg"    alt="..." width="100%"></a>
+        </div>
+      </div>
+  <br>
+  <h3 align="center">ONLINE PAYMENT</h3>
+  <div id="cc">
+    <div class="card">
+    <a href="{% url 'aline' %}">  <img src="/static/product/image/cc.jpg"  alt="..." width="100%"></a>
+     </div>
+    <div class="card">
+     <a href="{% url 'aline' %}"> <img src="/static/product/image/upi.jpg"     alt="..." width="100%"></a>
+    </div>
+    <div class="card">
+     <a href="{% url 'croptop' %}"> <img src="/static/product/image/nb.jpg"    alt="..." width="100%"></a>
+    </div>
+  </div>
+      <br>
+  
+      
+      <h3 align="center">NEW ARRIVALS</h3>
+      <div id="cd" >
+        <a href="{% url 'croptop' %}"><img src="/static/product/image/banner2.webp" width="100%" height="400px"></a>
+      </div>
+      <h3 align="center">Fashion category</h3>
+  
+    <div class="dd">
+      <div class="card1">
+       <a href="{% url 'croptop' %}"> <img src="/static/product/image/suit_5.jpg" alt=""></a>
+      </div>
+  
+      <div class="card1">
+       <a href="{% url 'croptop' %}"> <img src="/static/product/image/suit_4.jpg" alt=""></a>
+      </div>
+  
+      <div class="card1">
+        <a href="{% url 'bodycon' %}"> <img src="/static/product/image/suit_6.jpg" alt=""></a>
+      </div>
+  
+      <div class="card1">
+      <a href="{% url 'aline' %}">  <img src="/static/product/image/suit_7.jpg" alt=""></a>
+      </div>
+  
+      <div class="card1">
+      <a href="{% url 'bodycon' %}">  <img src="/static/product/image/suit_3.jpg" alt=""></a>
+      </div>
+    </div>
+ 
+       
+    <footer class="container-fluid bg-dark text-center p-2 mt-5">
+      <small class="text-white">Copyright Hritik Rathore &copy; 2023 ||  || </small>
+      <img src="{% static 'product/image/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+  </footer> 
+    
+    
+    
+    
+    
+
+{% endblock content %}
+</body>
+</html>

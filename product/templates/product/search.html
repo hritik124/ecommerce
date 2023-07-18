@@ -1,0 +1,94 @@
+{% extends 'product/base.html' %}
+{% block content %}
+{% if msg %}
+{{msg}}
+{% else %}
+{% if i1 %}
+{% for i in i1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP :  {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b>  </div>
+    <div><b>Availability : {{available }} </b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+{% if j1 %}
+{% for i in j1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP :  {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b>  </div>
+    <div><b>Availability : {{available }} </b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+{% if k1 %}
+{% for i in k1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP : {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b></div>
+    <div><b>Availability : {{available }}</b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+{% if l1 %}
+{% for i in l1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP : {{k.price}}</b></div>
+    <div><b> Description :{{k.desc}}</b></div>
+    <div><b>Availability : {{available }}</b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+{% if m1 %}
+{% for i in m1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP : {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b></div>
+    <div><b>Availability : {{available }}</b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+{% if n1 %}
+{% for i in n1 %}
+<image src="{{ i.image.url }}" width="200px" height="200px">
+    {{i.name}}
+    <div><b> MRP : {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b></div>
+    <div><b>Availability : {{available }}</b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+
+{% if o1 %}
+{% for i in o1 %}
+<image src="{{ i.image.url }}" width="400px" height="400px">
+    {{i.name}}
+    <div><b> MRP : {{i.price}}</b></div>
+    <div><b> Description :{{i.desc}}</b></div>
+    <div><b>Availability : {{available }}</b></div>
+    <div><b>You Purchase : {{q}}</b> </div>
+    <div><b>Total Bill : {{total}}</b> </div>
+{% endfor %}
+{% endif %}
+
+
+ <a href="{% url 'billing' %}">Billing Address </a>
+ {% endif %}
+{% endblock content %} 

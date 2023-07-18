@@ -1,0 +1,41 @@
+{% extends 'product/base.html' %}
+{% load static %}
+ {%  block content %}
+ <h3 align="center" textcolor="whitesmoke"> MENS WEAR</h3>
+ <div class="container" style="background:whitesmoke; margin:auto; padding:3px;">
+
+  <div class="row py-5 w-100"> 
+    {% for i in data %}
+    <div class="col-sm-3 ">
+   
+      <div class="card" style="width:20rem; height:20rem; background-color:rgb(250, 246, 246);">
+        <img src="{{i.image.url}}"style="width:20rem; height:20rem; padding:1px; ">
+    </div>
+   <div class="card-body" style="background:white; width:20rem;height:18rem; margin:10px;">
+    <hr>
+    <b>{{i.name}}</b>
+    <form action="{% url 'buy' i.id i.price i.available cat %}" method="post">
+      {% csrf_token %}
+    <label for="quantity"><b>Quantity:</b></label> 
+    <input type="text" name="quan" id="quantity">
+   <br>
+ <input class="btn" type="submit" value="Buy Now" style="margin:auto; padding :4px; margin:5px; border-radius:4px; background-color:navy; color:white; width:100%; ">
+</form>
+  <div><b> MRP :</b> {{i.price}}</div>
+  <div><b> Description :</b> {{i.desc}} </div>
+  <div><b>Availability :</b> {{i.available }} </div>
+  
+  </div>
+  </div>
+
+  {% endfor%}
+ </div>
+    
+
+</div>
+   
+<footer class="container-fluid bg-dark text-center p-2 mt-5">
+  <small class="text-white">Copyright Hritik Rathore &copy; 2023 ||  || </small>
+  <img src="{% static 'product/image/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+</footer> 
+{% endblock content %}  

@@ -1,0 +1,30 @@
+{% extends 'product/base.html' %}
+ {%  block content %}
+<div class="container" style=" margin:auto; background-color:whitesmoke">
+
+  <div class="row py-5 m-3">
+    {% for i,j,k in data %}
+<div class="card m-5 p-1 " style="width: 20rem; margin:auto;">
+  <img src="{{ i.image.url }}" class="card-img-top" alt="...">
+  <hr>
+  <b>{{i.name}}</b>
+  <div class="card-body">
+    
+   <br>
+   
+  <div><b> MRP :</b> {{i.price}}</div>
+  <div><b> Description :</b> {{i.desc}} </div>
+  <div><b>Availability :</b> {{i.available }} </div>
+  <div><b>You want :</b> {{k}} </div>
+  <div><b>Total :</b> {{j}} </div>
+  </div>
+</div>
+
+{% endfor%}
+  </div>
+</div>
+<div>Grant Total : {{total}}</div>
+
+
+
+{% endblock content %}  

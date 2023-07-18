@@ -1,0 +1,79 @@
+
+{% extends 'product/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+        width:30%;
+        background-color: rgb(144, 144, 243);
+        margin :auto;
+        padding:20px;
+        margin-top: 100px;
+        border-radius: 20px;
+        color:rgb(19, 18, 18);
+        
+    }
+    #input{
+        width:100%;
+        margin:10px;
+        padding:4px;
+        border-radius: 10px;
+        height:45px;
+    }
+    
+    button{
+        margin:auto;
+        padding:4px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        border-radius: 4px;
+        width: 100%;
+    }
+    form{
+      transition: transform 1s;
+    }
+    form:hover
+{
+    transform: scale(1.05);
+}  
+   
+    </style>
+</head>
+<body>
+    <form action="" method="post" >
+        <div class="container">
+            <h1 align="center">Login </h1>
+               {% csrf_token %}
+          <label for="username" class="label"><b><b>&nbsp;Username</b></b></label><br>
+          <input type="text" placeholder="Enter Username" name="username" required id="input">
+          <br>
+          <label for="psw"id="label"><b><b>Password</b></b></label><br>
+          <input type="password" placeholder="Enter Password" name="pass" required id="input">
+          <br>
+          <button type="submit"  ><b>Login</button>
+            <br><br>
+
+            <button type="submit"  ><b><a href="{% url 'signup' %}" style="color:rgb(14, 10, 10);">Create account </a></b></button>
+          <br><br>
+          
+        </div>
+      </form>
+      <footer class="container-fluid bg-dark text-center p-2 mt-5">
+        <small class="text-white">Copyright Hritik Rathore &copy; 2023 ||  || </small>
+        <img src="{% static 'product/image/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
+    </footer> 
+      
+      
+      {% endblock content %}
+</body>
+</html>
